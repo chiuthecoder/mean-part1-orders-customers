@@ -1,0 +1,45 @@
+    <div ng-controller="productsController"> 
+<!--       <div class="row">
+        <div class="bg-danger" ng-bind="errors.message">
+        </div>
+      </div> -->
+
+      <h2>Add a new product</h2>
+      <form class="form-inline">
+	      <div class="form-group">
+		      <label>Product Name: <label>
+		      <input class="form-control" type='text' name='name' ng-model='newProduct.name'>
+		      <label>Description: <label>
+		      <input class="form-control" type='text' name='description' ng-model='newProduct.description'>
+		      <label>Quantity: <label>
+		      <input class="form-control" type='text' name='quantity' ng-model='newProduct.quantity'>
+		      <label>Picture: <label>
+		      <input class="form-control" type='file' name='image' ng-model='newProduct.image'>
+		      <input type='submit' value='Add' ng-click='addProduct()' class='btn btn-big btn-primary'>
+	    	</div>
+	      <input type='hidden' ng-model='newProduct.created' value='date'>
+	     
+      </form>
+
+  		<div class="pull-right form-group"><input class='form-control' type='text' ng-model='filter_name' placeholder='search home...'></div>
+			
+			<table class='table'>
+				<tr>
+					<th>Product Name</th>
+					<th>Product Description</th>
+					<th>QTY</th>
+					<th>image</th>
+					<th>Created Date</th>
+					<th>Actions</th>
+				</tr>
+				<tr ng-repeat="product in products | filter: filter_name  | orderBy: 'created' ">
+					<td ng-bind='product.name'></td>
+					<td ng-bind='product.description'></td>
+					<td ng-bind='product.quantity'></td>
+					<td ng-bind='product.image'></td>
+					<td ng-bind='product.created'></td>
+					<td><button ng-click='removeProduct(product._id)'>delete</button></td>
+				</tr>
+			</table>
+
+    </div>
