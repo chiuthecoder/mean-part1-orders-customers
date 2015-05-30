@@ -1,6 +1,4 @@
-Angular Mini Store
-
-
+Orders & Customers
 
 MEAM stack:
 
@@ -17,15 +15,16 @@ File Structures:
 
 DemoSite
 
->server.js
->client
+server.js
+
+client
 	index.html
 	css
 	js
 	images
 	partials
 
->server
+server
 	config
 		mongoose.js
 		routes.js
@@ -36,4 +35,4 @@ DemoSite
 		customer.js
 		orders.js
 
->node_modules
+node_modules
